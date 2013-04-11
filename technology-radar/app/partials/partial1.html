@@ -1,0 +1,37 @@
+<div id="container-fluid">
+  <div id="row-fluid show-grid">
+    <div class="span11 offset1">
+      <h1>Technologies</h1>
+    </div>
+  </div>
+  <div id="show-grid">
+    <div class="span5 offset1">
+      Search: <input ng-model="query"><br>
+      Sort by:
+      <select ng-model="orderParameter">
+        <option value="name">By name</option>
+        <option value="evaluation">By evaluation</option>
+        <option value="year">By year</option>
+        <option value="year">By tendency</option>
+      </select>
+    </div>
+    <div class="span5 offset1">
+      <div id="technologies" ng-controller="ListController">
+        <h2>Total number of technologies: {{ technologies.length}}</h2>
+        <table>
+          <th>Name</th>
+          <th>Evaluation</th>
+          <th>Year</th>
+          <th>Tendency</th>
+          <tr class="tech" ng-repeat="technology in technologies |filter:query | orderBy:orderParameter">
+
+            <td><a href="#/detail/{{technology._id}}">{{technology.name}}</a></td>
+            <td>{{technology.evaluation | getValue}}</td>
+            <td>{{technology.year}}</td>
+            <td>{{technology.tendency}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

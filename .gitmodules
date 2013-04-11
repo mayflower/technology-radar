@@ -1,0 +1,6 @@
+[submodule "modules/nodejs"]
+	path = modules/nodejs
+	url = git@github.com:danheberden/puppet-nodejs.git
+[submodule "technology-radar"]
+	path = technology-radar
+	url = git@github.com:triebawerker/technology-radar.git
