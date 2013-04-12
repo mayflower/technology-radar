@@ -16,8 +16,12 @@
     $ npm install
 
     $ cd ..
+    
+    # fill sample data to mongo
+    $ node radar-service/data/populateDb.js
+    $ ^C
 
     # start angular frontend
-    $ node technologie-radar/scripts/web-server.js
+    $ node technology-radar/scripts/web-server.js
     $ node radar-service/server.js
 
