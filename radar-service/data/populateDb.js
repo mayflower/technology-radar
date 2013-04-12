@@ -56,7 +56,7 @@ var populateDB = function() {
   ];    
  
     db.collection('technologies', function(err, collection) {
-        collection.insert(wines, {safe:true}, function(err, result) {});
+        collection.insert(technologies, {safe:true}, function(err, result) {});
     });
  
 };

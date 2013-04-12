@@ -7,17 +7,11 @@ var Server = mongo.Server,
 var server = new Server('localhost', 27017, {auto_reconnect: true});
 db = new Db('technologies', server);
  
-db.open(function(err, db) {
-    if(!err) {
-        console.log("Connected to 'technologies' database");
-        db.collection('technologies', {safe:true}, function(err, collection) {
-            if (err) {
-                console.log("The 'technologies' collection doesn't exist. Creating it with sample data...");
-                populateDB();
-            }
-        });
-    }
-});
+    db.open(function(err, db) {
+        if(!err) {
+            console.log("Connected to 'technologies' database");
+        }
+    });
 
 
 
@@ -41,15 +35,17 @@ exports.findById = function(req, res) {
     var id = req.params.id;
     console.log('Retrieving technologie: ' + id);
     db.collection('technologies', function(err, collection) {
-        collection.findOne({'_id': BSON.ObjectID(id)}, function(err, item) { res.header("Access-Control-Allow-Origin", "http://localhost:8000");
-	    res.header("Access-Control-Allow-Headers", "*");
-            res.send(item);
+        collection.findOne({'_id': BSON.ObjectID(id)}, function(err, item) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "*");
+        res.send(item);
         });
     });
 };
  
 exports.findAll = function(req, res) {
     db.collection('technologies', function(err, collection) {
+        console.log('Find all technologies');
         collection.find().toArray(function(err, items) {
 	    res.header("Access-Control-Allow-Origin", "*");
 	    res.header("Access-Control-Allow-Headers", "*");
@@ -108,35 +104,5 @@ exports.deleteTechnologie = function(req, res) {
             }
         });
     });
-}
- 
-/*--------------------------------------------------------------------------------------------------------------------*/
-// Populate database with sample data -- Only used once: the first time the application is started.
-// You'd typically not find this code in a real-life app, since the database would already exist.
-var populateDB = function() {
- 
-    var wines = [
-    {
-        name: "CHATEAU DE SAINT COSME",
-        year: "2009",
-        grapes: "Grenache / Syrah",
-        country: "France",
-        region: "Southern Rhone",
-        description: "The aromas of fruit and spice...",
-        picture: "saint_cosme.jpg"
-    },
-    {
-        name: "LAN RIOJA CRIANZA",
-        year: "2006",
-        grapes: "Tempranillo",
-        country: "Spain",
-        region: "Rioja",
-        description: "A resurgence of interest in boutique vineyards...",
-        picture: "lan_rioja.jpg"
-    }];
- 
-    db.collection('wines', function(err, collection) {
-        collection.insert(wines, {safe:true}, function(err, result) {});
-    });
- 
+
 };
