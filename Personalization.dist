@@ -1,8 +1,8 @@
 # VM IP
-$ip = "192.168.10.13"
+$ip = "192.168.10.81"
 
 # Project Root
-$share_project = "/opt/ws/technology-radar"
+$share_project = "/host/to/technology-radar"
 
 # Use NFS?
 $use_nfs = true
