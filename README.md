@@ -11,4 +11,8 @@
 
     $ cd /srv/www/technology-radar
 
-    $ ?
+    $ npm install
+
+    # start angular frontenc
+    $ ./technologie-radar/scripts/web-server.sh
+    $ node radar-service/server.js
