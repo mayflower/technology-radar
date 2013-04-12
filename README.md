@@ -10,9 +10,14 @@
     $ vagrant ssh
 
     $ cd /srv/www/technology-radar
-
     $ npm install
 
-    # start angular frontenc
-    $ ./technologie-radar/scripts/web-server.sh
+    $ cd radar-service
+    $ npm install
+
+    $ cd ..
+
+    # start angular frontend
+    $ node technologie-radar/scripts/web-server.js
     $ node radar-service/server.js
+
