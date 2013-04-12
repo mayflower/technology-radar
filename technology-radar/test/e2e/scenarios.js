@@ -15,7 +15,7 @@ describe('my app', function () {
 
     describe('technology resource list', function () {
 
-        var detailPath = '/detail/5167f9288e2d6d3214000001';
+        var detailPath = '/detail/5167f93f706ee71514000001';
 
         it('should have a detail link', function () {
             expect(element('#technologies a', 'link one').count()).toBeGreaterThan(0);
@@ -44,10 +44,10 @@ describe('my app', function () {
                 expect(element('#technologies td a', 'edit link').count()).toBe(1);
             });
 
-            it('should redirect to detail view with edit form', function () {
-                element('#technologies a:first', 'detail link').click();
-                expect(element('form').count()).toBe(1);
-            });
+//            it('should redirect to detail view with edit form', function () {
+//                element('#technologies a:first', 'detail link').click();
+//                expect(element('form').count()).toBe(1);
+//            });
         });
 
     });
