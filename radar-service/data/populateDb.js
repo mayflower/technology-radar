@@ -22,37 +22,36 @@ db.open(function(err, db) {
 
 var populateDB = function() {
 
+  db.collection('technologies', function(err, collection) {
+        collection.drop();
+  });
+
   var technologies = [
     {
-      "_id": "5167f93f706ee71514000001",
       name : "testacular",
       evaluation : "2",
       year : "2010",
       tendency : "down"
     },
     {
-      "_id": "5167f93f706ee71514000002",
       name : "bootstrap",
       evaluation : "2",
       year : "2010",
       tendency : "up"
     },
     {
-      "_id": "5167f93f706ee71514000003",
       name : "ZendFramework1",
       evaluation : "3",
       year : "2005",
       tendency : "down"
     },
     {
-      "_id": "5167f93f706ee71514000004",
       name : "mysql",
       evaluation : "0",
       year : "1999",
       tendency : "stable"
     },
     {
-      "_id": "5167f93f706ee71514000005",
       name : "mongodb",
       evaluation : "1",
       year : "2005",
