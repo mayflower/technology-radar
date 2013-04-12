@@ -10,9 +10,29 @@ describe('my app', function() {
 
 
   it('should start with root', function() {
-    expect(browser().location().url()).toBe("");
+    expect(browser().location().url()).toBe("/view1");
   });
 
+  describe('technology resource list', function() {
+
+      it('should have a detail link', function() {
+          expect(element('#technologies a', 'link one').count()).toBeGreaterThan(0);
+      });
+
+      it('should redirect to detail view', function() {
+
+          element('#technologies a:first', 'detail link').click();
+          expect(browser().location().url()).toEqual('/detail/5167f9288e2d6d3214000001');
+
+      });
+      
+      it('should redirect to detail view', function() {
+
+          element('#technologies a:first', 'detail link').click();
+          expect(browser().location().url()).toEqual('/detail/5167f9288e2d6d3214000001');
+
+      })
+  });
 
   /*describe('Technologies', function() {
     it('should display 3 technologies', function() {
