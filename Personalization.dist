@@ -1,0 +1,11 @@
+# VM IP
+$ip = "192.168.10.13"
+
+# Project Root
+$share_project = "/opt/ws/technology-radar"
+
+# Use NFS?
+$use_nfs = true
+
+# VM Memory size
+$memory = 512
