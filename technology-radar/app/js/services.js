@@ -12,7 +12,7 @@ angular.module('myApp.services', []).
 angular.module('myApp.technologyService', ['ngResource']).
     factory('Technologies', function($resource){
 
-        return $resource('http://localhost\\:3000/technologies/:id', {}, {
+        return $resource('http://192.168.10.81\\:3000/technologies/:id', {}, {
         });
     });
 
