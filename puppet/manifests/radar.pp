@@ -3,4 +3,12 @@ node default {
     version => 'stable',
   }
 
+  package { 'mongodb':
+    ensure => 'present',
+  }
+
+  service { 'mongodb':
+    ensure => 'running',
+    require => Package['mongodb']
+  }
 }
