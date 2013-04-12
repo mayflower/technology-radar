@@ -34,9 +34,21 @@ describe('my app', function () {
             expect(browser().location().url()).toEqual(detailPath);
 
         });
+        describe('Detail View should have an edit link', function () {
 
-        describe('Detail View should have an edit link', function() {
-            expect(element('#technologies a:first', 'edit link').count()).toBe(1);
+            beforeEach(function () {
+                browser().navigateTo('/index.html#' + detailPath);
+            });
+
+            it('should have a minimum of one link', function () {
+                expect(element('#technologies td a', 'edit link').count()).toBe(1);
+            });
+
+            it('should redirect to detail view with edit form', function () {
+                element('#technologies a:first', 'detail link').click();
+                expect(element('form').count()).toBe(1);
+            });
         });
+
     });
 });
