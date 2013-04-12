@@ -1,8 +1,10 @@
 .vagrant
+.idea
 Personalization
 
 project
 puppet/modules/nodejs
+node_modules
 
 radar-service/node_modules
 radar-service/logs
