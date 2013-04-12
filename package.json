@@ -1,0 +1,28 @@
+{
+  "name": "technology-radar",
+  "version": "0.0.1",
+  "description": "Manage technologies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Mayflower/technology-radar.git"
+  },
+  "keywords": [
+    "technology",
+    "radar"
+  ],
+  "author": "mf",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "65ab115a63e1cb7e5e3e2eefd35381331e5ffecd",
+  "devDependencies": {
+    "phantomjs": "~1.9.0-1",
+    "karma": "~0.8.4"
+  },
+  "dependencies": {
+    
+  }
+}
