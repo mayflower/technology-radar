@@ -6,14 +6,14 @@ files = [
   'test/e2e/**/*.js'
 ];
 
-autoWatch = false;
+autoWatch = true;
 
-browsers = ['Chrome'];
+browsers = ['PhantomJS'];
 
-singleRun = true;
+singleRun = false;
 
 proxies = {
-  '/': 'http://localhost:8000/'
+  '/': 'http://192.168.10.81:8000/technology-radar/app/'
 };
 
 junitReporter = {
