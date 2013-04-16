@@ -4,8 +4,10 @@
 
 describe('my app', function () {
 
+    var indexPath = '/indexE2E.html'
+
     beforeEach(function () {
-        browser().navigateTo('/index.html');
+        browser().navigateTo(indexPath);
     });
 
 
@@ -15,7 +17,8 @@ describe('my app', function () {
 
     describe('technology resource list', function () {
 
-        var detailPath = '/detail/5167f93f706ee71514000001';
+        var detailPath = '/detail/51685e098bd0a4400a000001';
+
 
         it('should have a detail link', function () {
             expect(element('#technologies a', 'link one').count()).toBeGreaterThan(0);
@@ -37,7 +40,7 @@ describe('my app', function () {
         describe('Detail View should have an edit link', function () {
 
             beforeEach(function () {
-                browser().navigateTo('/index.html#' + detailPath);
+                browser().navigateTo(indexPath + '#' + detailPath);
             });
 
             it('should have a minimum of one link', function () {

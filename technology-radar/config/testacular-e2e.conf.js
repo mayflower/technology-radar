@@ -1,7 +1,8 @@
 basePath = '../';
 
 files = [
-  ANGULAR_SCENARIO,
+  //ANGULAR_SCENARIO,
+  'test/lib/angular/angular-scenario.js',
   ANGULAR_SCENARIO_ADAPTER,
   'test/e2e/**/*.js',
   {pattern: 'app/**/*', included: false}
@@ -13,8 +14,13 @@ browsers = ['PhantomJS'];
 
 singleRun = false;
 
+// karma internals
+urlRoot = '/karma/';
+
+//logLevel = LOG_DEBUG;
+
 proxies = {
-  '/': 'http://192.168.10.81:8000/technology-radar/app/'
+  '/': 'http://localhost:9876/base/app/'
 };
 
 junitReporter = {
